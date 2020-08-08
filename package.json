@@ -21,7 +21,6 @@
   "bugs": {
     "url": "https://github.com/JaswantBB/spacex/issues"
   },
-  "homepage": "https://github.com/JaswantBB/spacex#readme",
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
