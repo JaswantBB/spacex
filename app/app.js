@@ -18,11 +18,6 @@ import configureStore from './configureStore';
 
 import './core/styles/app.scss';
 
-const userDetails = localStorage.user;
-if (!userDetails && window.location.origin.indexOf('local') < 0) {
-  window.location.href = `${window.location.origin}?target=${window.location.pathname.slice(1)}`;
-}
-
 const initialState = {};
 const history = createBrowserHistory();
 const store = configureStore(initialState, history);
