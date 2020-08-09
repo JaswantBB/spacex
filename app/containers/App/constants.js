@@ -1,0 +1,5 @@
+export const SHOW_LOADER = 'App/SHOW_LOADER';
+export const HIDE_LOADER = 'App/HIDE_LOADER';
+
+export const SHOW_NOTIFICATION = 'App/SHOW_NOTIFICATION';
+export const RESET_NOTIFICATION = 'App/HIDE_NOTIFICATION';

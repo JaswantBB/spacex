@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css?family=Rubik&display=swap");
+
+// 1. Base
+@import "base/all";
+
+// 2. Components
+@import "components/button", "components/dropdown", "components/error",
+  "components/icons", "components/inputs";
+
+// 3. Layouts
+// @import "layout/grid";
+
+// 4. Utils
+// @import "utils/util";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+aside {
+  z-index: 20;
+}
+
+.link,
+.link:hover {
+  color: $blue;
+  text-decoration: underline;
+}
+
+.main-content {
+  overflow-x: hidden;
+}
+
+.loading-indicator {
+  background: $color--white;
+  height: 100%;
+}
+
+.spinner > div {
+  background: $color--black;
+}
+
+.loading-indicator {
+  z-index: 15;
+}
+
+.loading-indicator {
+  position: relative;
+}
+
+.field-label {
+  display: inline-flex;
+  margin-bottom: $space--xs;
+  color: $label-color !important;
+  font-size: calc-letter-spacing(12) !important;
+}
+
+.search__item {
+  height: 32px;
+  width: 200px;
+}
+
+.space-right {
+  margin-right: $space--sm;
+}
+
+.space-left {
+  margin-left: $space--sm;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+/* Custom CSS */
+
+.button-fill {
+  background-color: $button--color !important;
+  color: $color--white !important;
+  border: 1px solid $button--color !important;
+
+  &:hover {
+    opacity: 0.8 !important;
+    background-color: $button--color !important;
+    color: $color--white !important;
+    border: 1px solid $button--color !important;
+  }
+}
+
+.button-border {
+  border: 1px solid $button--color !important;
+  color: $button--color !important;
+
+  &:hover {
+    opacity: 0.8 !important;
+    border: 1px solid $button--color !important;
+    color: $button--color !important;
+  }
+}
+
+.small-column-width {
+  width: 120px !important;
+}
+
+.big-column-width {
+  width: 300px !important;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.empty-container {
+  text-align: center;
+
+  .empty-margin {
+    margin-top: $space--lg;
+    margin-bottom: $space--lg;
+  }
+}
+
+.empty-container {
+  text-align: center;
+
+  .empty-margin {
+    margin-top: $space--lg;
+    margin-bottom: $space--lg;
+  }
+}
+
+.custom-button {
+  width: 100px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* Antd Override Scss */
+@import "antd.scss";
+
+.custom-font {
+  font-family: "Rubik" !important;
+}
+
+.custom-dropdown-scroll > * > * {
+  &::-webkit-scrollbar {
+    -webkit-appearance: none !important;
+    width: 7px !important;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: $space--2xs !important;
+    background-color: rgba($color-dark-gray, .8) !important;
+    box-shadow: 0 0 1px rgba($label-color, .5) !important;
+  }
+}
+
+/* Mobile (portrait and landscape) */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* Styles */
+  html {
+    font-size: 12px;
+  }
+
+  body {
+    font-size: 12px;
+  }
+}
+
+/* Desktops and laptops */
+@media only screen and (min-width: 1224px) {
+  /* Styles */
+  html {
+    font-size: 16px;
+  }
+}
+
+/* Large screens */
+@media only screen and (min-width: 1824px) {
+  /* Styles */
+  html {
+    font-size: 22px;
+  }
+}

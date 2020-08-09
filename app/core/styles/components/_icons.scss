@@ -1,0 +1,31 @@
+$sub-url: '';
+i {
+	width: 20px;
+  height: 20px;
+  background-size: contain;
+
+  &.sort {
+    background-image: url($sub-url + '/sort-icon.svg');
+    cursor: pointer;
+  }
+  &.sort.active {
+    background-image: url($sub-url + '/sort-icon-active.svg');
+  }
+  &.sort.ascending {
+    background-image: url($sub-url + '/down-arrow-solid.svg');
+  }
+  &.sort.descending {
+    background-image: url($sub-url + '/up-arrow-solid.svg');
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+
+  &.medium {
+    width: 30px;
+    height: 30px;
+  }
+}
