@@ -1,0 +1,293 @@
+$u-step-size: 5 !default;
+$u-min-height-max: 200 !default;
+$u-margin-padding-max: 50 !default;
+
+.u-grey {
+  color: $grey-label;
+}
+
+.u-red {
+  color: $error;
+}
+
+.u-text-left {
+  text-align: left;
+}
+
+.u-text-italic {
+  font-style: italic;
+}
+
+.u-text-right {
+  text-align: right;
+
+  &_i {
+    text-align: right !important;
+  }
+}
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-width {
+  &__half {
+    width: 50%;
+  }
+
+  &__full {
+    width: 100%;
+  }
+}
+
+.u-height {
+  &__half {
+    height: 50%;
+  }
+
+  &__full {
+    height: 100%;
+  }
+}
+
+.u-absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.u-fixed-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}
+
+.u-float-left {
+  float: left;
+}
+
+.u-float-right {
+  float: right;
+}
+
+.u-float-none {
+  float: none;
+}
+
+.u-text-vsmall {
+  font-size: 10px;
+}
+
+.u-text-small {
+  font-size: 12px;
+}
+
+.u-text-medium {
+  font-size: 16px;
+}
+
+.u-text-big {
+  font-size: 24px;
+}
+
+.u-o-hidden {
+  overflow: hidden;
+}
+
+.u-p-relative {
+  position: relative;
+}
+
+.u-pointer {
+  cursor: pointer;
+}
+
+.u-tag-text {
+  color: white;
+  background-color: $orange;
+  padding: 0px 5px;
+  border-radius: 2px;
+}
+
+.u-cir-5 {
+  width: 5px;
+  height: 5px;
+  background-color: $black--medium;
+  border-radius: 50%;
+  margin-top: 3px;
+  display: inline-block !important;
+}
+
+.u-inline-block {
+  display: inline-block;
+}
+
+.u-block {
+  display: block;
+
+  &i {
+    display: block !important;
+  }
+}
+
+.u-orange {
+  color: $orange;
+}
+
+.u-ellipses {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@for $i from 0 through ($u-min-height-max / $u-step-size) {
+  .u-mh-#{$i * $u-step-size} {
+    min-height: $i * $u-step-size + px;
+
+    &i {
+      min-height: $i * $u-step-size + px !important;
+    }
+  }
+}
+
+@mixin u-margin-padding-classes($size, $prefix: 'm', $property: 'margin') {
+  .u-#{$prefix}-#{$size} {
+    #{$property}: $size + px;
+
+    &i {
+      #{$property}: $size + px !important;
+    }
+  }
+
+  .u-#{$prefix}t-#{$size} {
+    #{$property}-top: $size + px !important;
+
+    &i {
+      #{$property}-top: $size + px !important;
+    }
+  }
+
+  .u-#{$prefix}r-#{$size} {
+    #{$property}-right: $size + px;
+
+    &i {
+      #{$property}-right: $size + px !important;
+    }
+  }
+  
+  .u-#{$prefix}b-#{$size} {
+    #{$property}-bottom: $size + px;
+
+    &i {
+      #{$property}-bottom: $size + px !important;
+    }
+  }
+
+  .u-#{$prefix}l-#{$size} {
+    #{$property}-left: $size + px;
+
+    &i {
+      #{$property}-left: $size + px !important;
+    }
+  }
+
+  .u-#{$prefix}x-#{$size} {
+    #{$property}-right: $size + px;
+    #{$property}-left: $size + px;
+
+    &i {
+      #{$property}-right: $size + px !important;
+      #{$property}-left: $size + px !important;
+    }
+  }
+
+  .u-#{$prefix}y-#{$size} {
+    #{$property}-top: $size + px;
+    #{$property}-bottom: $size + px;
+
+    &i {
+      #{$property}-top: $size + px !important;
+      #{$property}-bottom: $size + px !important;
+    }
+  }
+}
+
+@for $i from 0 through ($u-margin-padding-max / $u-step-size) {
+  @include u-margin-padding-classes($i * $u-step-size);
+  @include u-margin-padding-classes($i * $u-step-size, 'p', 'padding');
+}
+
+.u-m-auto {
+  margin: 0 auto;
+}
+
+.u-m-auto-10 {
+  margin: 10px auto;
+}
+
+.u-cushion-5 {
+  padding: 0 5px;
+
+  &i {
+    padding: 0 5px !important;
+  }
+}
+
+.u-mt-75 {
+  margin-top: 75px;
+}
+
+
+.heading-1 {
+  @include get-typography('heading-1');
+}
+
+.heading-2 {
+  @include get-typography('heading-2');
+}
+
+.heading-3 {
+  @include get-typography('heading-3');
+}
+
+.heading-4 {
+  @include get-typography('heading-4');
+}
+
+.heading-5 {
+  @include get-typography('heading-5');
+}
+
+.heading-6 {
+  @include get-typography('heading-6');
+}
+
+.subheading-1 {
+  @include get-typography('subheading-1');
+}
+
+.subheading-2 {
+  @include get-typography('subheading-2');
+}
+
+.body-text {
+  @include get-typography('body-text');
+}
+
+.body-ui {
+  @include get-typography('body-ui');
+}
+
+.caption {
+  @include get-typography('caption');
+}
+
+.overline {
+  @include get-typography('overline');
+}
+
+.black-disabled {
+  color: $black--disabled;
+}

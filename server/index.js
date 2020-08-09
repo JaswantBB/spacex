@@ -1,6 +1,7 @@
 /* eslint consistent-return:0 */
 
 const express = require('express');
+const logger = require('./logger');
 
 const argv = require('./argv');
 const port = require('./port');
@@ -16,7 +17,7 @@ const app = express();
 // In production we need to pass these values in instead of relying on webpack
 setup(app, {
   outputPath: resolve(process.cwd(), 'build'),
-  publicPath: '/karma',
+  publicPath: '/spacex',
 });
 
 // get the intended host and port number, use localhost and port 3000 if not provided
@@ -27,18 +28,19 @@ const prettyHost = customHost || 'localhost';
 // Start your app.
 app.listen(port, host, (err) => {
   if (err) {
-    return console.log(err.message);
+    return logger.error(err.message);
   }
 
   // Connect to ngrok in dev mode
   if (ngrok) {
     ngrok.connect(port, (innerErr, url) => {
       if (innerErr) {
-        return console.log(innerErr);
+        return logger.error(innerErr);
       }
-      console.log(`App started on: http://${host}:${port}`)
+
+      logger.appStarted(port, prettyHost, url);
     });
   } else {
-    console.log(`App started on: http://${host}:${port}`)
+    logger.appStarted(port, prettyHost);
   }
 });

@@ -15,24 +15,12 @@ function notFoundResponse() {
  * @return {object}           The response data
  */
 export function request(httpOptions) {
-  const sessionKey = JSON.parse(localStorage.user).session_key;
   httpOptions.headers = httpOptions.headers || {};
-  if (httpOptions.url.indexOf(config.apiGatewayUrl) !== -1 && !(httpOptions.data && httpOptions.data.session_key)) {
-    httpOptions.headers.Authorization = `Token ${JSON.parse(localStorage.user).session_key}`;
-  }
 
-  if (httpOptions.url.indexOf(config.blackbuckApi) > -1) {
+  if (httpOptions.url.indexOf(config.apiGatewayUrl) > -1) {
     if (httpOptions.method === 'post') {
       httpOptions.data = httpOptions.data || {};
-      httpOptions.data.session_key = sessionKey;
-    } else {
-      httpOptions.params.data = JSON.stringify({ session_key: sessionKey });
     }
-  }
-
-  const source = httpOptions.source || config.source;
-  if (source && httpOptions.url.includes(config.apiGatewayUrl)) {
-    httpOptions.headers['X-SOURCE-ID'] = source;
   }
 
   return fetch(httpOptions.url, {

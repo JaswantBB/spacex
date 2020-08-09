@@ -1,0 +1,19 @@
+.card {
+  padding: $space--xs $space--md $space--md;
+  border-radius: $space--xs;
+  @include surface('2', null);
+  background: $color__white;
+  display: flex;
+  transition: all 0.3s ease;
+  &:hover {
+    transform: translateY(3px);
+    @include surface('4', null);
+  }
+  &-header {
+    @include get-typography('subheading-1');
+    padding: 0 0 $space--xs 0;
+  }
+  &-body {
+    height: 100%;
+  }
+}

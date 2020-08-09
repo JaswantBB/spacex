@@ -12,7 +12,7 @@ import { ConnectedRouter } from 'connected-react-router/immutable';
 import { createBrowserHistory } from 'history';
 import { withRouter } from 'react-router';
 
-import App from 'containers/App';
+import App from './containers/App';
 
 import configureStore from './configureStore';
 

@@ -1,0 +1,61 @@
+// brand colors with two variations
+$brand--primary   : #D91E48;
+$brand--secondary : #012A36;
+
+$grey-label       : #5c5c5c;
+
+// divider color
+$lines            : #e2e2e2;
+
+$selection        : #e3fdf1;
+
+$primary-blue     : #1890ff;
+$blue             : #27b3f8;
+$light-blue       : #cbebfb;
+$orange           : #ffa130;
+$light-grey       : #fafafa;
+$medium-grey      : #e6e6e6;
+$dark-grey        : #999;
+$honeydew         : #f0fff0;
+
+/* 
+* possible background color's
+*/
+$color--black     : #000000;
+$color--white     : #ffffff;
+$color-lite-gray  : #d3d3d3;
+$color-dark-gray  : #808080;
+$color--gray      : #fcfcfc;
+$default--background : #F3F7FD;
+$color--background  : #F4F6FC;
+$grey-background  : #efefef;
+
+/* 
+* notification colors
+*/
+$success          : #00BC78;
+$error            : #d90707;
+$warning          : #E16B36;
+
+/* 
+* ink colors (with variations only for black and white)
+*/
+$white--high      : rgba($color--white, 1);
+$white--medium    : rgba($color--white, 0.91);
+$white--disabled  : rgba($color--white, 0.64);
+
+$black--high      : rgba($color--black, 0.85);
+$black--medium    : rgba($color--black, 0.64);
+$black--disabled  : rgba($color--black, 0.43);
+
+$button--color    : #2C88E4;
+$border-color     : #d9d9d9;
+$label-color      : #9B9B9B;
+$hover-color      : #f5f5f5;
+$button-color-payment: #26B3F1;
+
+$light-border     : #e8e8e8;
+
+$light-blue-background  : #e6f7ff;
+
+$side-bar-color: #001529;

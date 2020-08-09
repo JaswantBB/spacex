@@ -1,0 +1,104 @@
+/*
+* Typography
+*/
+
+// TODO: falls needs to handle
+$typography-fallback: -apple-system, BlinkMacSystemFont, “Segoe UI”, “Roboto”,
+  “Oxygen”, “Ubuntu”, “Cantarell”, “Fira Sans”, “Droid Sans”, “Helvetica Neue”,
+  sans-serif;
+
+$font-weight: (
+  'heading-1': 300,
+  'heading-2': 300,
+  'heading-3': 300,
+  'heading-4': 300,
+  'heading-5': 400,
+  'heading-6': 400,
+  'subheading-1': 600,
+  'subheading-2': 600,
+  'body-text': 400,
+  'body-ui': 400,
+  'caption': 400,
+  'overline': 600
+);
+$letter-spacing: (
+  'heading-1': -2,
+  'heading-2': -1.5,
+  'heading-3': -1,
+  'heading-4': -0.3,
+  'heading-5': 0,
+  'heading-6': 0.1,
+  'subheading-1': 0.2,
+  'subheading-2': 0.3,
+  'body-text': 0.2,
+  'body-ui': 0.3,
+  'caption': 0.5,
+  'overline': 2
+);
+$line-height: (
+  'heading-1': 1.3,
+  'heading-2': 1.3,
+  'heading-3': 1.3,
+  'heading-4': 1.6,
+  'heading-5': 1.5,
+  'heading-6': 1.6,
+  'subheading-1': 1.8,
+  'subheading-2': 1.8,
+  'body-text': 1.7,
+  'body-ui': 1.7,
+  'caption': 1.6,
+  'overline': 1.6
+);
+
+$font-size: (
+  'heading-1': (
+    96/16
+  ),
+  'heading-2': (
+    68/16
+  ),
+  'heading-3': (
+    54/16
+  ),
+  'heading-4': (
+    36/16
+  ),
+  'heading-5': (
+    24/16
+  ),
+  'heading-6': (
+    20/16
+  ),
+  'subheading-1': (
+    16/16
+  ),
+  'subheading-2': (
+    14/16
+  ),
+  'body-text': (
+    16/16
+  ),
+  'body-ui': (
+    14/16
+  ),
+  'caption': (
+    12/16
+  ),
+  'overline': (
+    10/16
+  )
+);
+
+@function calc-letter-spacing($value) {
+  @return ($value / 16) * 1rem;
+}
+
+@mixin get-typography($typography-type) {
+  font-size: #{map-get($font-size, $typography-type)}rem;
+  font-weight: #{map-get($font-weight, $typography-type)};
+  letter-spacing: #{map-get($letter-spacing, $typography-type)}px;
+  line-height: #{map-get($line-height, $typography-type)};
+  text-transform: if($typography-type == 'overline', uppercase, inherit);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}

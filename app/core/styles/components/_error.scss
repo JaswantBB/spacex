@@ -1,0 +1,20 @@
+.has-error {
+  label {
+    color: $error !important;
+  }
+
+  .Select-control,
+  input,
+  select,
+  textarea {
+    border-color: $error !important;
+  }
+
+  .Select-menu-outer {
+    border-top-color: $error !important;
+  }
+}
+
+.error-text {
+  color: $error !important;
+}

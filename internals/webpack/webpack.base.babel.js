@@ -4,7 +4,6 @@
 
 const path = require('path');
 const webpack = require('webpack');
-const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // Remove this line once the following warning goes away (it was meant for webpack loader authors not users):
 // 'DeprecationWarning: loaderUtils.parseQuery() received a non-string value which can be problematic,
@@ -120,10 +119,6 @@ module.exports = (options) => ({
       },
     }),
     new webpack.NamedModulesPlugin(),
-    new CopyPlugin([
-      { from: './app/core/images' },
-      { from: './app/cssstyles'}
-    ]),
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',
       chunkFilename: '[id].[hash].css',

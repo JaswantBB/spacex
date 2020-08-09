@@ -1,0 +1,30 @@
+/// button placeholder with basic button styles
+%btn {
+  @include get-typography("body-ui");
+  height: $space--2xl;
+  padding: 0 $space--md;
+  min-width: $space--2xl;
+  border-radius: $space--2xs;
+  border: none;
+  cursor: pointer;
+}
+
+/// Creates button with three states
+/// @param {String} $text-color button text color
+/// @param {String} $background-color button background color
+@mixin button($text-color, $background-color) {
+  @extend %btn;
+  color: #{$text-color};
+  background-color: #{$background-color};
+  &:focus {
+    color: #{$text-color};
+  }
+  &:hover {
+    color: #{$text-color};
+    @include surface("2", null);
+  }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

@@ -1,0 +1,88 @@
+.ui-dropdown {
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.b-dropdown {
+  position: relative;
+
+	button {
+		padding-right: 35px !important;
+
+    .caret {
+    	width: 0;
+	    height: 0;
+	    border-left: 6px solid transparent;
+	    border-right: 6px solid transparent;
+	    border-top: 8px solid white;
+	    position: absolute;
+	    right: 18px;
+	    top: 14px;
+    }
+	}
+
+	ul {
+		position: absolute;
+    background-color: white;
+    border-radius: 2px;
+    z-index: 9;
+    border: 1px solid $lines;
+    box-shadow: 0 0 6px rgba(38, 50, 69, 0.2);
+    top: 43px;
+    right: 6px;
+
+    li {
+    	padding: 10px;
+    	border-bottom: 1px solid $lines;
+    	cursor: pointer;
+
+    	&:hover {
+    		background-color: $selection;
+    	}
+
+    	&:last-child {
+    		border-bottom: none;
+    	}
+
+      &.link {
+        padding: 0;
+        text-decoration: none;
+        
+        a {
+          padding: 10px;
+          display: block;
+          color: $black--high;
+        }
+      }
+    }
+
+    &:before {
+    	border: inset 6px;
+	    content: "";
+	    display: block;
+	    height: 0;
+	    width: 0;
+	    border-color: transparent transparent #fff transparent;
+	    border-bottom-style: solid;
+	    position: absolute;
+	    top: -12px;
+	    right: 11px;
+	    z-index: 10;
+    }
+
+    &:after {
+    	border: inset 7px;
+	    content: "";
+	    display: block;
+	    height: 0;
+	    width: 0;
+	    border-color: transparent transparent #cccccc transparent;
+	    border-bottom-style: solid;
+	    position: absolute;
+	    top: -14px;
+	    right: 10px;
+	    z-index: 9;
+    }
+	}
+}
