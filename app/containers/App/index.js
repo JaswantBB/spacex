@@ -48,6 +48,12 @@ const App = () => {
       ));
     }
 
+    if (!isLoading && !spacexList.length) {
+      return (<div className="empty__view">
+        <span>No Data Availabel For this search. Please change the FIlter and Search Again!</span>
+      </div>);
+    }
+
     return (
       spacexList.map((space) => (
         <div key={space.flight_number} className="spacex-detail-card">

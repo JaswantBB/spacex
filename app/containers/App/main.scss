@@ -20,7 +20,11 @@
       flex: 1;
       display: flex;
       flex-wrap: wrap;
-      min-height: 400px;
+
+      .empty__view {
+        font-size: calc-letter-spacing(20);
+        margin: auto;
+      }
     }
 
     .spacex-detail-card {
