@@ -1,7 +1,7 @@
 /* global config */
 import { push } from 'connected-react-router';
 
-import { SHOW_NOTIFICATION, LOGOUT_USER } from 'containers/App/constants';
+import { SHOW_NOTIFICATION } from 'containers/App/constants';
 
 function isActualResponse(response) {
   return response && typeof response === 'object' && response.status;
@@ -47,11 +47,6 @@ const loadingMiddleware = (store) => (next) => (action) => {
 
       if (status === 401) {
         globalMsg = 'Your session is not valid, please re login again. You will be redirected to login soon';
-        setTimeout(() => {
-          store.dispatch({
-            type: LOGOUT_USER,
-          });
-        }, 3000);
       } else if (status === 400) {
         globalMsg = serverMsg || `Some thing is not right with the request ${action.response.config.url.replace(config.apiGatewayUrl, '')}`;
       } else if (status === 403) {

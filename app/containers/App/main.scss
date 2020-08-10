@@ -1,0 +1,95 @@
+@import '../../core/styles/base/all';
+
+.app__root {
+  background-color: $color--background;
+  height: 100%;
+
+  .spacex--heading {
+    font-size: calc-letter-spacing(24);
+    padding: $space--xs;
+  }
+  .app__content {
+    display: flex;
+    flex-wrap: wrap;
+
+    .filter__container {
+      width: 200px;
+    }
+
+    .spacex__container {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+
+    }
+
+    .spacex-detail-card {
+      margin: $space--xs;
+    }
+  }
+
+  .spacex__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $space--xs;
+    .footer__label {
+      font-size: calc-letter-spacing(20);
+    }
+    .footer__value {
+      padding-left: $space--xs;
+    }
+  }
+}
+
+.filter__card__container {
+  margin: $space--xs;
+  border-radius: $space--xs;
+  background: $color--white;
+  padding: $space--xs;
+
+  .filter__heading {
+    font-size: calc-letter-spacing(18);
+  }
+
+  .filter__title {
+    text-align: center;
+
+    &::after {
+      content: "";
+      display: block;
+      border-bottom: 1px solid $lines;
+      padding: $space--2xs;
+    }
+  }
+
+  .launch__filter {
+    padding: $space--xs;
+    display: flex;
+    flex-wrap: wrap;
+
+
+    .filter__button {
+      padding: $space--2xs $space--xs;
+      background: $brand--primary;
+      margin: $space--xs;
+      border-radius: $space--2xs;
+      min-width: 34px;
+      text-align: center;
+    }
+  }
+
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 700px) {
+  .app__content {
+    justify-content: center;
+
+    .spacex__container {
+      justify-content: center;
+    }
+  }
+  .spacex__footer {
+    flex-direction: column;
+  }
+}

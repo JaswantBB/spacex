@@ -1,0 +1,50 @@
+@import '../../styles/base/all';
+
+.space-detail-card {
+  padding: $space--sm;
+  width: 250px;
+  background: $color--white;
+  border-radius: $space--xs;
+
+  .spacex-detail-logo {
+    background-color: $color--background;
+    .logo__icon {
+      width: 250px;
+      height: 250px;
+    }
+  }
+
+  .space-detail-heading {
+    color: $side-bar-color;
+    margin: $space--sm $space--sm 0;
+  }
+
+  .spacex-detail-mission {
+    margin: $space--sm $space--sm 0;
+
+    .text-list {
+      list-style: disc;
+      margin-left: $space--xs;
+    }
+
+    .detail-value {
+      margin-left: $space--sm;
+      color: $label-color;;
+    }
+  }
+
+
+  .detail-container {
+    display: flex;
+    flex-direction: row;
+    margin: $space--sm $space--sm 0;
+  
+    .detail-value {
+      padding-left: $space--xs;
+      color: $label-color;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      word-break: break-word;
+    }
+  }
+}
