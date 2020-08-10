@@ -14,7 +14,9 @@
     "lint:eslint": "eslint -c .eslintrc app",
     "lint:fix": "eslint -c .eslintrc app --fix",
     "lint:js": "npm run lint:eslint",
-    "lint:staged": "lint-staged"
+    "lint:staged": "lint-staged",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -129,6 +131,7 @@
     "exports-loader": "0.6.4",
     "express": "^4.17.1",
     "file-loader": "4.2.0",
+    "gh-pages": "^3.1.0",
     "html-loader": "0.4.5",
     "html-webpack-plugin": "^4.3.0",
     "image-webpack-loader": "^4.6.0",
