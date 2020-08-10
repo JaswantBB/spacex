@@ -6,3 +6,8 @@ export const getSpacexListSelector = createSelector(
   AppSelector,
   (app) => app.get('spacexList'),
 );
+
+export const getLoadingSelector = createSelector(
+  AppSelector,
+  (app) => app.get('isLoading'),
+);

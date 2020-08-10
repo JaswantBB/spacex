@@ -20,7 +20,7 @@
       flex: 1;
       display: flex;
       flex-wrap: wrap;
-
+      min-height: 400px;
     }
 
     .spacex-detail-card {
@@ -76,6 +76,15 @@
       border-radius: $space--2xs;
       min-width: 34px;
       text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        background: $brand--secondary;
+      }
+
+      &.active {
+        background: $brand--secondary;
+      }
     }
   }
 
